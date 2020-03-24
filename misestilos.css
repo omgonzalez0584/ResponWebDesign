@@ -1,0 +1,12 @@
+.texto1 { font-size: 40px }
+
+*{
+  margin: 0px
+  }
+
+p:nth-child(odd) {
+  background: #999999
+    }
+p:nth-child(even) {
+  background: #CCCCCC
+  }
