@@ -65,3 +65,18 @@ body {
   padding: 20px;
   boder-top: 20px solid #999999;
 }
+
+article {
+  background: #FFFBCC;
+  border: 1px solid #999999;
+  padding: 20px;
+  margin-botton: 15px;
+}
+
+article footer{
+  text-align: right;
+}
+
+figcaption{
+  font: italic 14px verdana,  sans-serif;
+}
