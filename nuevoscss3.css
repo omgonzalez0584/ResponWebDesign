@@ -10,15 +10,22 @@ body {
   text-align: center;
   border: 1px solid #999999;
   background: #DDDDDD;
-
-  -moz-border-radius: 20px;
-  -webkit-border-raduis: 20px;
-  border-radius: 20px;
-  box-shadow: rgb(150,150,150) 5px 5px 10px;
-  text-shadow: rgb(0,0,150) 3px 3px 5px;
+  transition: transform 1s ease-in-out 0.5s;
 
 }
 
+#principal:hover{
+  transform: rotate(5deg);
+}
+
 #titulo{
-  font: bold 36px verdana , sans-serif;
+  font: bold 36px  Minuevafuente, verdana , sans-serif;
+  text-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
+  color: hsla(120,100%,50%,0.5);
+}
+
+
+@font-face{
+  font-family: 'Minuevafuente';
+  src: url('Fuentes/CaviarDreams.ttf');
 }
