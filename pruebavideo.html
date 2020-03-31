@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Reproductor de video</title>
+    <link rel='stylesheet' href='player.css'>
+    <script src="reproducto.js"> </script>
+  </head>
+
+  <body>
+    <section id="reproductor">
+
+      <video id="medio" width="720" height="400" controls >
+        <source src="libraryIrish.mp4">
+        <source src='libraryIrish.ogg'>
+      </video>
+
+      <nav>
+        <div id='botones'>
+          <button type='button' id='reproducir'> reproducir</button>
+        </div>
+
+        <div id='barra'>
+          <div id='progreso'> </div>
+        </div>
+
+        <div style='clear: both'> </div>
+      </nav>
+
+    </section>
+  </body>
+
+</html>
