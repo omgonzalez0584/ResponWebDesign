@@ -28,10 +28,14 @@
     }
 
     function enviar(){
-      var valido = document.informacion.checkValidy();
+      var elemento = document.getElementById("usuario");
+      var valido = document.informacion.checkValidity();
       if(valido){
         document.informacion.submit();
       }
+       else if(elemento.validity.patternMismatch || elemento.validity.valueMissing){
+            alert('El nombre de usuario debe tener minimo 3 caracteres');
+       }
     }
 
     function controlar(e){
@@ -63,3 +67,4 @@
   </section>
 </body>
 </html>
+ 
