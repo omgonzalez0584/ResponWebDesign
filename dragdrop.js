@@ -1,40 +1,30 @@
 function iniciar(){
-  origen1 = document.getElementById('imagen1');
-  origen1.addEventListener('dragstart', arrastrado, false);
-  origen1.addEventListener('dragend', finalizado, false);
+  var imagenes = document.querySelectorAll('#cajaimagenes >  img');
+  for (var i = 0 ; i < imagenes.length; i++){
+    imagenes[i].addEventListener('dragstart', arrastrado, false);
+  }
 
   soltar = document.getElementById('cajasoltar');
-  soltar.addEventListener('dragenter', entrando, false);
-  soltar.addEventListener('dragleave', saliendo, false);
+  soltar.addEventListener('dragenter', function (e) { e.preventDefault(); }, false);
   soltar.addEventListener('dragover', function(e){e.preventDefault(); } , false);
   soltar.addEventListener('drop', soltado, false);
 }
 
-function entrando(e){
-  e.preventDefault();
-  soltar.style.background='rgba(0,150,0,.2)';
-}
-
-function saliendo(e){
-  e.preventDefault();
-  soltar.style.background='#FFFFFF';
-}
-
-function finalizado(e){
-  elemento=e.target;
-  elemento.style.visibility='hidden';
-}
-
 
 function arrastrado(e){
-   var codigo = '<img src="'+origen1.getAttribute('src') + '">';
-   e.dataTransfer.setData('Text',codigo);
+    elemento = e.target;
+    e.dataTransfer.setData('Text',elemento.getAttribute('id'));
 }
 
 function soltado(e){
   e.preventDefault();
-  soltar.style.background='#FFFFFF';
-  soltar.innerHTML=e.dataTransfer.getData('Text');
+  var id = e.dataTransfer.getData('Text');
+  if(id!='imagen4'){
+    var src=document.getElementById(id).src;
+    soltar.innerHTML='<img src="'+src+'">';
+  }
+  else{
+    soltar.innerHTML='La imagen no es admitida';
+   }
 }
-
 window.addEventListener('load', iniciar, false);
