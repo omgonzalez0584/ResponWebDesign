@@ -8,9 +8,8 @@ function iniciar(){
   soltar = document.getElementById('lienzo');
   lienzo = soltar.getContext('2d');
 
-  soltar = document.getElementById('cajasoltar');
-  soltar.addEventListener('dragenter', function (e) { e.preventDefault(); }, false);
-  soltar.addEventListener('dragover', function (e){e.preventDefault(); } , false);
+  soltar.addEventListener('dragenter', function(e) { e.preventDefault(); }, false);
+  soltar.addEventListener('dragover', function(e){e.preventDefault(); } , false);
   soltar.addEventListener('drop', soltado, false);
 }
 
